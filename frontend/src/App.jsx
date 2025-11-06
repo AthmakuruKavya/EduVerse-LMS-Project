@@ -1,13 +1,15 @@
-import './App.css'
-import { Button } from './components/ui/button'
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import AuthPage from "./pages/auth/AuthPage";
 
 function App() {
-
   return (
     <>
-      <Button className="bg bg-red-600">Hiii..</Button>
+      <Routes>
+        <Route path="/" element={<AuthPage />} />
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
