@@ -1,34 +1,18 @@
-// import React from 'react'
-// import { Button } from '../ui/button'
-// import FormControls from './FormControls'
+import React from "react";
+import { Button } from "../ui/button";
+import FormControls from "./FormControls";
 
-// const CommonForm = ({handleSubmit, buttonText, formControls = [], formData, setformData}) => {
-//   return (
-//     <form onSubmit={handleSubmit} className="space-y-6">
-//         {/*render form controls here*/}
-//         <FormControls formControls={formControls} formData={formData} setformData={setformData}/>
-//         <Button 
-//           type="submit" 
-//           className="w-full py-2.5 bg-gray-900 hover:bg-gray-800 text-white rounded-lg font-medium transition-all"
-//         >
-//           {buttonText || "Submit"}
-//         </Button>
-
-//     </form>
-//   )
-// }
-
-// export default CommonForm
-
-import React from 'react'
-import { Button } from '../ui/button'
-import FormControls from './FormControls'
-
-const CommonForm = ({ handleSubmit, buttonText, formControls = [], formData, setformData }) => {
+const CommonForm = ({
+  handleSubmit,
+  buttonText,
+  formControls = [],
+  formData,
+  setformData,
+  isButtonDisabled = false,
+}) => {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-
-      <FormControls 
+      <FormControls
         formControls={formControls}
         formData={formData}
         setformData={setformData}
@@ -36,17 +20,14 @@ const CommonForm = ({ handleSubmit, buttonText, formControls = [], formData, set
 
       {/* ✅ Updated richer button gradient */}
       <Button
+        disabled={isButtonDisabled}
         type="submit"
-        className="w-full py-2.5 bg-gradient-to-r from-[#B374FF] to-[#8A35FF] 
-        hover:opacity-95 text-white rounded-xl font-semibold shadow-md transition-all"
+        className="w-full py-2.5 bg-[#8A35FF] hover:bg-[#7A2FE6] cursor-pointer text-white rounded-xl font-semibold shadow-md transition-all"
       >
         {buttonText || "Submit"}
       </Button>
-
     </form>
-  )
-}
+  );
+};
 
-export default CommonForm
-
-
+export default CommonForm;
