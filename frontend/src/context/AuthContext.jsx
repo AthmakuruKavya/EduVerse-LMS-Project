@@ -71,6 +71,14 @@ export default function AuthProvider({ children }) {
     }
   }
 
+  function resetCredentials(){
+    setAuth({
+      authenticate : false,
+      user : null
+    })
+
+  }
+
   // Runs once on mount to check if user is logged in
   useEffect(() => {
     checkAuthUser();
@@ -91,6 +99,7 @@ export default function AuthProvider({ children }) {
         handleRegisterUser,
         handleLoginUser,
         auth,
+        resetCredentials,
       }}
     >
       {loading ? <Skeleton /> : children}
