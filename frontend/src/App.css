@@ -1,2 +1,31 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+
+
+/* FIX SHADCN SWITCH THUMB (WHITE BALL) */
+/* [data-state="checked"] span {
+  transform: translateX(20px);
+}
+
+[data-state="unchecked"] span {
+  transform: translateX(2px);
+}
+
+button[role="switch"] {
+  position: relative;
+  width: 42px;
+  height: 22px;
+  border-radius: 9999px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+button[role="switch"] > span {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: white;
+  transition: transform 0.2s ease-in-out;
+} */
