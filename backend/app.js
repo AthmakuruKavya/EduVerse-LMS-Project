@@ -4,6 +4,7 @@ const cors = require("cors");
 
 const { connectDB } = require("./config/database");
 const authRouter = require("./routes/authRoutes")
+const mediaRoutes = require("./routes/instructor-routes/mediaRoutes")
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -19,6 +20,7 @@ app.use(cors({
 
 //routes configuration
 app.use("/auth", authRouter)
+app.use("/media", mediaRoutes)
 
 //connecting to database and starting the server
 connectDB()
