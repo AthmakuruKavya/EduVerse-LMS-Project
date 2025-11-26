@@ -9,7 +9,7 @@ cloudinary.config({
 const uploadMediaToCloudinary = async (filePath) => {
   try {
     const result = await cloudinary.uploader.upload(filePath, {
-      resource_type: "video",
+      resource_type: "auto",
     });
     return result;
   } catch (err) {
@@ -20,7 +20,7 @@ const uploadMediaToCloudinary = async (filePath) => {
 
 const deleteMediaFromCloudinary = async (publicId) => {
   try {
-    const result = await cloudinary.uploader.destroy(publicId, {resource_type: "video"})
+    const result = await cloudinary.uploader.destroy(publicId)
     return result;
   } catch (err) {
     console.log(err);
